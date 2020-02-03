@@ -28,8 +28,9 @@ input[type=password]:not(.browser-default):focus:not([readonly])
 
 #card-separator{
   display: flex;
-  flex: auto;
   justify-content: space-between;
+  flex-direction: row;
+  
 }
 
 #titulo::first-letter,
@@ -48,12 +49,13 @@ input[type=password]:not(.browser-default):focus:not([readonly])
 }
 
 #span-type{
-  margin-right: 4rem
+  margin-right: 6rem
 }
 
 #pokeImg{
-  width: 50%;
-  margin-right: 2rem
+	max-width: 90%;
+  width: 40%;
+  margin-left: 2rem;
 }
 
 #logo{
@@ -61,3 +63,5 @@ input[type=password]:not(.browser-default):focus:not([readonly])
   color: #fcba03;
   text-shadow: 2px 0 0 rgb(23, 152, 212), -2px 0 0 rgb(23, 152, 212), 0 2px 0 rgb(23, 152, 212), 0 -2px 0 rgb(23, 152, 212), 1px 1px rgb(23, 152, 212), -1px -1px 0 rgb(23, 152, 212), 1px -1px 0 rgb(23, 152, 212), -1px 1px 0 rgb(23, 152, 212);
 }
+
+

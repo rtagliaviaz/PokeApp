@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const Pokemon = props => {
   console.log(props);
-  const { pokemon, pokemonNumber, pokeImg, pokeType, error } = props;
+  const { pokemon, pokemonNumber, pokeImg, pokeType, error, id } = props;
   if(error){
     return(
       <div className="container">
@@ -24,13 +24,15 @@ const Pokemon = props => {
       <div className='container'>
         <div className='row'>
           <div className='col s12 m6 offset-m3'>
-            <div className='card'>
-              <div className='card-content red-text'>
+            <div className='card red'>
+              <div className='card-content white-text'>
                 <span className="card-title" id="titulo">
                   {pokemon} <span>#{pokemonNumber}</span>
                 </span>
                 <div id='card-separator'>
-                  <img id="pokeImg" src={pokeImg} alt='' />
+                  <div className="card-image" id="pokeImg">
+                    <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt=""/>
+                  </div>
                   <div>
                     <span className='card-title' id="span-type" style={{fontWeight: "bold"}}>Type</span>
                     {pokeType &&
@@ -71,6 +73,7 @@ const mapStateToProps = state => {
   const pokemonNumber = pokemonData.id;
   const pokeImg = state.pokemon.pokeSprite;
   const pokeType = pokemonData.types;
+  const id = pokemonData.id
   
   return {
     pokeData: pokemonData,
@@ -78,7 +81,7 @@ const mapStateToProps = state => {
     pokemonNumber,
     pokeImg,
     pokeType,
-    
+    id
   };
 };
 
